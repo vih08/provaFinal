@@ -10,3 +10,15 @@ function registrarLog(nomeAluno){
   fs.appendFileSync("log registrado")
   return idUnico
 }
+
+const express = require("express")
+const app = express()
+
+app.use(express.json())
+
+const PORT = 8000
+app.listen(PORT, ()=>{
+  console.log(`é pra estar rodando na porta ${8000}`)
+})
+
+
