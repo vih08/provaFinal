@@ -21,4 +21,11 @@ app.listen(PORT, ()=>{
   console.log(`é pra estar rodando na porta ${8000}`)
 })
 
+app.post('/logs', (req,res)=>{
+  const{nomeAluno}=req.body
 
+  if(!nomeAluno){
+    return res.status(400).json({erro:"nome do aluno é obrigatorio por"})
+  }const idGerado = registrarLog(nome)
+  res.json({id:idGerado, mensagem:"log gerado (eu espero na vdd)"})
+})
